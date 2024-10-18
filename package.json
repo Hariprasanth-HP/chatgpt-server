@@ -1,4 +1,10 @@
 {
+  "name": "chatgpt-server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
   "dependencies": {
     "axios": "^1.7.7",
     "cors": "^2.8.5",

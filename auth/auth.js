@@ -46,6 +46,7 @@ router.post('/signup', async (req, res) => {
 
     res.status(201).json({
         message: 'User registered successfully',
+        userEmail:newUser.email,
         accessToken,
         refreshToken,
     });
@@ -68,6 +69,7 @@ router.post('/login', async (req, res) => {
     const refreshToken = generateRefreshToken({ id: user.id, email: user.email });
 
     res.json({
+        message: 'User logged in successfully',
         userEmail: email,
         accessToken,
         refreshToken,

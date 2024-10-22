@@ -12,12 +12,12 @@ dotenv.config();
 
 // Function to generate access tokens
 const generateAccessToken = (user) => {
-    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '5m' });
+    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '15m' });
 };
 
 // Function to generate refresh tokens
 const generateRefreshToken = (user) => {
-    const refreshToken = jwt.sign(user, process.env.REFRESH_TOKEN_SECRET, { expiresIn: '5m' });
+    const refreshToken = jwt.sign(user, process.env.REFRESH_TOKEN_SECRET, { expiresIn: '24h' });
     refreshTokens.push(refreshToken);
     return refreshToken;
 };
